@@ -3,7 +3,6 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { UserService } from 'src/user/user.service';
 import { ConfigService } from '@nestjs/config';
 import { CacheModule } from '@nestjs/cache-manager';
@@ -23,7 +22,7 @@ import { CacheModule } from '@nestjs/cache-manager';
       }),
     }),
   ],
-  providers: [AuthService, JwtStrategy, PrismaService, UserService],
+  providers: [AuthService, JwtStrategy, UserService],
   exports: [AuthService, JwtModule],
 })
 export class AuthModule {}

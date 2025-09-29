@@ -62,6 +62,9 @@ async function bootstrap() {
   const publicPath = join(process.cwd(), 'public');
   app.useStaticAssets(publicPath);
 
+    app.enableShutdownHooks();
+
+
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

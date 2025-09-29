@@ -28,9 +28,11 @@ import { FeedingModule } from './feeding/feeding.module';
 import { InabilityModule } from './inability/inability.module';
 import { PaginationModule } from './common/services/pagination/pagination.module';
 import { ClientProgrammingModule } from './client-programming/client-programming.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
+    PrismaModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
